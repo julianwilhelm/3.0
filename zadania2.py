@@ -34,6 +34,17 @@ l = [4, 1, [ 2, [7] ], 3]
 
 
 def wyplaszcz(l):
-    print(type(l))
+    l2=[]
+    l3=[]
+    for i in l:
+        if type(i) is not list:
+            l2.append(i)
+        else:
+            for n in i:
+                l3.append(i)
+        l2.append(l3)
+        
+    print(l2)
+
 
 wyplaszcz(l)
