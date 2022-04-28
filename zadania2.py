@@ -32,19 +32,18 @@
 # Podpowiedź: sprawdź co robi funkcja wbudowana type
 l = [4, 1, [ 2, [7] ], 3]
 
-
 def wyplaszcz(l):
     l2=[]
-    l3=[]
     for i in l:
-        if type(i) is not list:
-            l2.append(i)
-        else:
-            for n in i:
-                l3.append(i)
-        l2.append(l3)
-        
-    print(l2)
+        if len(i)==1:
+            if type(i) is int:
+                l2.append(i)
+            elif type(i) is list:
+                l2=l2+i
+                for l in l2:
+                    if type(l) is not int:
+                        l2=l2+l
+        print(l2)
 
 
 wyplaszcz(l)
