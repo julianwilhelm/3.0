@@ -30,20 +30,25 @@
 # [4, 1, 2, 7, 3]
 
 # Podpowiedź: sprawdź co robi funkcja wbudowana type
-l = [4, 1, [ 2, [7] ], 3]
+lista = [4, 1, [5], [ 2, [7] ], 3]
 
-def wyplaszcz(l):
+def wyplaszcz(lista):
     l2=[]
-    for i in l:
-        if len(i)==1:
-            if type(i) is int:
-                l2.append(i)
-            elif type(i) is list:
-                l2=l2+i
-                for l in l2:
-                    if type(l) is not int:
-                        l2=l2+l
-        print(l2)
+    for i in lista:
+        if type(i) is not list: #jak jeden element to odrazu append do płaskiej listy
+            l2.append(i)
+        elif type(i) is list:
+            if len(i)==1:
+                l2=l2+i #jednoelementowe listy dodajemy od buta
+            else:
+                for l in i: 
+                    if type(l) is not list: 
+                        l2.append(l)
+                    else:
+                        for x in l:
+                            l2.append(x)
+                        
+    print(l2)
 
 
-wyplaszcz(l)
+wyplaszcz(lista)
