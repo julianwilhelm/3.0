@@ -30,7 +30,7 @@
 # [4, 1, 2, 7, 3]
 
 # Podpowiedź: sprawdź co robi funkcja wbudowana type
-lista = [4, 1, [5], [ 2, [7] ], 3]
+lista =[4, 1, [5], [ 2, [7], 8 ], 3]
 
 def wyplaszcz(lista):
     l2=[]
